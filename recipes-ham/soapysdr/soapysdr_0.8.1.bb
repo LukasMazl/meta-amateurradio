@@ -12,6 +12,14 @@ SRCREV = "1cf5a539a21414ff509ff7d0eedfc5fa8edb90c6"
 SRC_URI = "git://github.com/pothosware/SoapySDR.git;protocol=https;branch=master \
           "
 
+PV="0.8.1"
+
 S = "${WORKDIR}/git"
 
+DEPENDS = "python3-setuptools-native"
 inherit cmake
+
+FILES:${PN} += " \
+    /usr/lib/python3.12/site-packages/SoapySDR.py \
+    /usr/lib/python3.12/site-packages/_SoapySDR.so \
+    "
